@@ -158,7 +158,6 @@ function handleShootAction() {
     var player = myContainer.get('player');
     var stage = myContainer.get('demoCanvas');
 
-
     for (var index in targetsContainer.children) {
         if (Object.prototype.hasOwnProperty.call(targetsContainer.children, index)) {
             var child = targetsContainer.children[index];
@@ -174,6 +173,7 @@ function handleShootAction() {
             };
 
             if (hasCirclesIntersection(playerCircle, childCircle)) {
+                targetsContainer.removeChildAt(index);
                 stage.update();
             }
         }
